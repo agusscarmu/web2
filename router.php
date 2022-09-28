@@ -1,11 +1,8 @@
 <?php
-require_once "views/template.php";
-require_once "views/modulos/ingresar.php";
-require_once "views/modulos/inicio.php";
-require_once "views/modulos/nosotros.php";
-require_once "views/modulos/registrarse.php";
-require_once "views/modulos/soporte.php";
-require_once "controllers/controller.php";
+// require_once "templates/header.php";
+// require_once "views/view.php";
+require_once "controllers/registController.php";
+require_once "controllers/pageController.php";
 
 
 if($_GET['action']==''){
@@ -14,33 +11,40 @@ if($_GET['action']==''){
     $action = $_GET['action'];
 }
 
+
+
 $parse = explode ('/',$action);
 
 $registController = new registController;
+$pageController = new pageController;
+
+// $userView = new userView;
         
 switch($parse[0]){
     case 'registro':
     $registController->addRegistro();
+    $pageController->getInicio(); 
     break;
 
     case 'inicio':
-    showInicio();
+    // $userView->showInicio();
+    $pageController->getInicio();
     break;
 
     case 'ingresar':
-    showIngresar();
+    $pageController->getIngreso();
     break;
 
     case 'nosotros':
-    showNosotros();
+    $pageController->getNosotros();
     break;
 
     case 'registrarse':
-    showRegistrarse();
+    $pageController->getRegistro();
     break;
     
     case 'soporte':
-    showSoporte();
+    $pageController->getSoporte();
     break;
         
     

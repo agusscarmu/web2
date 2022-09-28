@@ -1,5 +1,5 @@
 <?php
-require_once "views/modulos/registrarse.php";
+require_once "views/view.php";
 require_once "models/model.php";
 
 class registController{
