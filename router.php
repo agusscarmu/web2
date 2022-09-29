@@ -6,7 +6,7 @@ require_once "controllers/pageController.php";
 
 
 if($_GET['action']==''){
-    $action='inicio';
+    $action='pacientes';
 }else{
     $action = $_GET['action'];
 }
@@ -23,12 +23,12 @@ $pageController = new pageController;
 switch($parse[0]){
     case 'registro':
     $registController->addRegistro();
-    $pageController->getInicio(); 
+    $pageController->getPacientes(); 
     break;
 
-    case 'inicio':
+    case 'pacientes':
     // $userView->showInicio();
-    $pageController->getInicio();
+    $pageController->getPacientes();
     break;
 
     case 'ingresar':

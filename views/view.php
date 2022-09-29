@@ -8,7 +8,7 @@ class userView{
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Medical</title>
+        <title>Consultorio</title>
     </head>
     <body>
     <header>
@@ -16,7 +16,7 @@ class userView{
     </header>
     <nav>
         <ul>
-            <li><a href="inicio">Inicio</a></li>
+            <li><a href="pacientes">Pacientes</a></li>
             <li><a href="registrarse">Registrarse</a></li>
             <li><a href="ingresar">Ingresar</a></li>
             <li><a href="nosotros">Nosotros</a></li>
@@ -28,10 +28,22 @@ class userView{
     </body>
     </html>';
     
-    public function showInicio(){
+    public function showPacientes($pacientes){
         echo $this->html;
         ?>
-        <h1> hola </h1>
+        <h1>PACIENTES</h1>
+        <ul>
+        <?php
+        foreach ($pacientes as $paciente){ 
+        
+        echo "  <li>
+                <span> <b>$paciente->nombre</b> <b>$paciente->edad</b> <b>$paciente->dni</b> <b>$paciente->motivo</b> <b>$paciente->ID_obrasocial</b> </span>
+                </li>";
+        
+        }
+        ?>
+        </ul>
+        
         <?php
         echo $this->html2;
         }
@@ -58,10 +70,11 @@ class userView{
     function showRegistrarse(){
         echo $this->html;
         ?>
+        <h1>REGISTRO DE MEDICO</h1>
         <form action="registro" method="POST">
             <label for="">Su nombre:</label><input type="text" name="name" placeholder="Apellido y Nombre">
             <label for="">Su numero de documento:</label><input type="number" name="dni" placeholder="DNI">
-            <label for="">Su edad:</label><input type="number" name="edad" placeholder="Edad">
+            <label for="">Su especialidad:</label><input type="text" name="especialidad" placeholder="Especialidad">
             <label for="">Su mail:</label><input type="text" name="mail" placeholder="ejemplo@mail.com">
             <label for="">Establezca una contraseña:</label><input type="password" name="pass" placeholder="Contraseña">
             <button type="submit">Registrarse</button>
