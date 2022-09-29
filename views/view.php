@@ -37,10 +37,11 @@ class userView{
         foreach ($pacientes as $paciente){ 
         
         echo "  <li>
-                <span> <b>$paciente->nombre</b> <b>$paciente->edad</b> <b>$paciente->dni</b> <b>$paciente->motivo</b> <b>$paciente->ID_obrasocial</b> </span>
+                <span> <b>$paciente->nombre</b> <b>$paciente->edad</b> <b>$paciente->dni</b> <b>$paciente->motivo</b> <b>$paciente->nombre2</b> </span>
                 </li>";
         
         }
+        
         ?>
         </ul>
         

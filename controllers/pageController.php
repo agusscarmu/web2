@@ -15,6 +15,7 @@ class pageController{
 
     }
 
+
     public function getRegistro(){
         $this->view->showRegistrarse();
     }
