@@ -7,10 +7,6 @@ class pageModel{
         $this -> db = new PDO('mysql:host=localhost;'.'dbname=consultorio;charset=utf8', 'root', '');
     }
 
-    public function insertRegistro($name, $dni, $especialidad, $mail, $pass){
-        $query = $this->db->prepare("INSERT INTO medicos(nombre, dni, especialidad, mail, pass) VALUES (?,?,?,?,?)");
-        $query -> execute([$name, $dni, $especialidad, $mail, $pass]);
-    }
 
     public function getPacientes(){
         $query = $this->db->prepare("SELECT pacientes.nombre, pacientes.edad, pacientes.dni, pacientes.motivo, obrasocial.nombre as nombre2 
