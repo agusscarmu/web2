@@ -1,9 +1,9 @@
 {include file="header.tpl"}
 <div>
-  <h1 class="revealUp">Administracion</h1>
+  <h1 class="revealUp2">Administracion</h1>
 </div>
 
-<div class="revealUp2 contenedoradmin shadow-lg p-3 mb-5 bg-body rounded">
+<div class="revealUp contenedoradmin shadow-lg p-3 mb-5 bg-body rounded">
     <form action="agregar" method="POST">
     <label for="basic-url" class="form-label">Datos del paciente:</label>
     <div class="input-group mb-3">

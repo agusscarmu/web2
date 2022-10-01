@@ -1,8 +1,8 @@
 {include file="header.tpl"}
 <div class="singin">
-  <h1 class="revealUp">Iniciar sesion</h1>
+  <h1 class="revealUp2">Iniciar sesion</h1>
 </div>
-<div class="revealUp2 login shadow-lg p-3 mb-5 bg-body rounded">
+<div class="revealUp login shadow-lg p-3 mb-5 bg-body rounded">
     <Form class="loginform" action="ingreso" method="POST">
       <div class="maillogin mb-3">
         <label for="exampleInputEmail1" class="form-label">Su correo electronico</label>
