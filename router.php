@@ -3,6 +3,7 @@ require_once "./app/controllers/adminController.php";
 require_once "./app/controllers/pageController.php";
 require_once "./app/controllers/loginController.php";
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+define('ADMIN_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/administracion');
 
 
 
@@ -24,7 +25,16 @@ $loginController = new loginController;
 switch($parse[0]){
     case 'agregar':
     $adminController->addRegistro();
-    $pageController->getNewPx(); 
+    break;
+
+    case 'modificar':
+    $id = $parse[1];
+    $adminController->modificarPaciente($id);
+    break;
+
+    case 'borrar':
+    $id = $parse[1];
+    $adminController->borrarPaciente($id);
     break;
 
     case 'pacientes':

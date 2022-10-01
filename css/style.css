@@ -1,6 +1,8 @@
 body{
     background: linear-gradient(220.55deg, #5D85A6 0%, #0E2C5E 100%);
 }
+
+
 .contenedor{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -35,6 +37,7 @@ body{
 .relleno{
     margin: 18%;
 }
+
 
 .maillogin{
     margin-left: 15%;
@@ -94,6 +97,7 @@ h2{
 .tablaspacientes{
     margin-left: 12%;
     margin-right: 12%;
+    margin-bottom: 22%;
     background-color: rgb(192, 211, 227);
 }
 

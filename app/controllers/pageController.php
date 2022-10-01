@@ -1,6 +1,6 @@
 <?php
 require_once "./app/views/view.php";
-require_once "./app/models/model.php";
+require_once "./app/models/editModel.php";
 
 class pageController{
     private $view;
@@ -9,7 +9,7 @@ class pageController{
     
     public function __construct(){
         $this -> view = new userView();
-        $this -> model = new pageModel();
+        $this -> model = new editModel();
         $this -> loginmodel = new loginModel();
     }
     public function getPacientes(){

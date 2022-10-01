@@ -30,7 +30,7 @@
       <span class="input-group-text">Motivo de consulta</span>
       <textarea class="form-control" name="motivo" placeholder="Ingrese motivo de consulta" aria-label="With textarea"></textarea>
     </div>
-        <button type="button" class="botonagregar btn btn-primary">Agregar paciente</button>
+        <button type="submit" class="botonagregar btn btn-primary">Agregar paciente</button>
     </form>
 
 </div>
@@ -60,7 +60,8 @@
       <td class="dni">{$paciente->dni}</td>
       <td class="motivo">{$paciente->motivo}</td>
       <td class="obrasocial">{$paciente->nombre2}</td>
-      
+      <td><a href='borrar/{$paciente->id}' type='button' class='btn btn-danger'>Borrar</a></td>
+      <td><a href='modificar/{$paciente->id}' type='button' class='btn btn-primary'>Modificar</a></td>
     </tr>
     </tbody>
   </table>

@@ -17,9 +17,13 @@ class adminController{
             $motivo=$_POST['motivo'];
             $obrasocial=$_POST['obrasocial'];
             $id= $this->model->insertPaciente($name,$dni,$edad,$motivo,$obrasocial);
+            header("Location: " . ADMIN_URL);
         }
     
-        
+    function borrarPaciente($id){
+        $this->model->borrarPaciente($id);
+        header("Location: " . ADMIN_URL);
+        }
 
 
 

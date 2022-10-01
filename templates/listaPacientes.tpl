@@ -1,11 +1,12 @@
 {include file="header.tpl"}
+
 <div class="conteo">
     <h1 class="revealUp2">Actualmente hay {$count} pacientes esperando a ser atendidos</h1>
 </div>
 <div>
     <h1 class="revealUp3"> Lista de pacientes: </h1>
 </div>
-<div class="revealUp tablaspacientes shadow-lg p-3 mb-5 bg-body rounded">
+<div class="revealUp tablaspacientes shadow-lg p-3 bg-body rounded">
 <table class="table">
 <thead class="table-light">
         <tr class="contenedor">
