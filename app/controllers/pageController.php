@@ -1,6 +1,6 @@
 <?php
-require_once "views/view.php";
-require_once "models/model.php";
+require_once "./app/views/view.php";
+require_once "./app/models/model.php";
 
 class pageController{
     private $view;
@@ -24,12 +24,6 @@ class pageController{
     }
     public function getIngreso(){
         $this->view->showIngresar();
-    }
-    public function getNosotros(){
-        $this->view->showNosotros();
-    }
-    public function getSoporte(){
-        $this->view->showSoporte();
     }
 
 }

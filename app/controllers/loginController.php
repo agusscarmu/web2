@@ -1,7 +1,7 @@
 <?php
 
-require_once "views/view.php";
-require_once "models/loginModel.php";
+require_once "./app/views/view.php";
+require_once "./app/models/loginModel.php";
 
 class loginController{
 
@@ -20,7 +20,7 @@ class loginController{
             session_start();
             $_SESSION['ID']=$medico -> ID;
             $_SESSION['mail']=$medico -> mail;
-            header('location:'. URL_PACIENTES);
+            
         }else{
             $this -> view -> showIngresar('Login Incorrecto');
         }

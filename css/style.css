@@ -1,0 +1,119 @@
+body{
+    background: linear-gradient(220.55deg, #5D85A6 0%, #0E2C5E 100%);
+}
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "nombre edad dni motivo obrasocial";
+}
+
+.contenedoradmin{
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: aliceblue;
+}
+
+.login{
+    margin-left: 15%;
+    margin-right: 15%;
+    border-bottom: 20%;
+    padding-bottom: 30%;
+    padding-top: 20%;
+    background-color: aliceblue;
+}
+
+.singin{
+    margin: 7%;
+}
+
+.passlogin{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.relleno{
+    margin: 18%;
+}
+
+.maillogin{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.botonagregar{
+    margin: 2% auto;
+}
+.conteo{
+    margin: 8%;
+}
+@keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+.revealUp{
+    animation: 2s anim-lineUp;
+}
+.revealUp2{
+    animation: 4s anim-lineUp;
+}
+.revealUp3{
+    animation: 5s anim-lineUp;
+}
+
+h1{
+    color:aliceblue;
+    height: 5%;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    color: aliceblue;
+    text-decoration: underline;
+}
+
+.tablaspacientes{
+    margin-left: 12%;
+    margin-right: 12%;
+    background-color: rgb(192, 211, 227);
+}
+
+.tablapaciente{
+    background-color: aliceblue;
+
+}
+.tablapaciente2{
+    background-color: rgb(207, 219, 229);
+
+}
+
+.section {
+    height: 5%;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

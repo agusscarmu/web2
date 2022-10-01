@@ -1,6 +1,6 @@
 <?php
-require_once "views/view.php";
-require_once "models/editModel.php";
+require_once "./app/views/view.php";
+require_once "./app/models/editModel.php";
 
 class adminController{
 

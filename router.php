@@ -1,10 +1,8 @@
 <?php
-// require_once "templates/header.php";
-// require_once "views/view.php";
-require_once "controllers/adminController.php";
-require_once "controllers/pageController.php";
-require_once "controllers/loginController.php";
-define("URL_PACIENTES", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/ingreso');
+require_once "./app/controllers/adminController.php";
+require_once "./app/controllers/pageController.php";
+require_once "./app/controllers/loginController.php";
+
 
 
 if($_GET['action']==''){
@@ -40,16 +38,8 @@ switch($parse[0]){
     $pageController->getIngreso();
     break;
 
-    case 'nosotros':
-    $pageController->getNosotros();
-    break;
-
     case 'administracion':
     $pageController->getNewPx();
-    break;
-    
-    case 'soporte':
-    $pageController->getSoporte();
     break;
         
     
