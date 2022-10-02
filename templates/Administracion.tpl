@@ -23,8 +23,14 @@
     
     <div class="input-group mb-3">
       <span class="input-group-text">Obra social</span>
-      <input type="text" class="form-control" name="obrasocial" placeholder="Obra social del paciente" aria-label="Recipient's username">
+            <select name="obrasocial" class="form-control" aria-label="Recipient's username">
+            {foreach from=$osocial item=$obras}
+                <option value="{$obras->ID}">{$obras->nombre}</option>
+            {/foreach}
+            </select>
+      
     </div>
+   
     
     <div class="input-group">
       <span class="input-group-text">Motivo de consulta</span>
@@ -34,37 +40,20 @@
     </form>
 
 </div>
-    <div class="conteo">
-    <h1 class="revealUp3">Actualmente hay {$count} pacientes esperando a ser atendidos</h1>
-    </div>
-    </tr></tr>
-    <h2>Datos de pacientes:</h2>
-    <table class="table">
-    <thead class="table-light">
-            <tr class="contenedor">
-                <th class="nombre" scope="col">Nombre</th>
-                <th class="edad" scope="col">Edad</th>
-                <th class="dni" scope="col">DNI</th>
-                <th class="motivo" scope="col">Motivo de consulta</th>
-                <th class="obrasocial" scope="col">Obra social</th>
-            </tr>
-        </thead>
-
-{foreach from=$pacientes item=$paciente}
-    <table class="table vertical-align: middle">
-    
-    <tbody class="tablapaciente2">
-    <tr class="contenedor">
-      <th class="nombre">{$paciente->nombre}</th>
-      <td class="edad">{$paciente->edad}</td>
-      <td class="dni">{$paciente->dni}</td>
-      <td class="motivo">{$paciente->motivo}</td>
-      <td class="obrasocial">{$paciente->nombre2}</td>
-      <td><a href='borrar/{$paciente->id}' type='button' class='btn btn-danger'>Borrar</a></td>
-      <td><a href='modificar/{$paciente->id}' type='button' class='btn btn-primary'>Modificar</a></td>
-    </tr>
-    </tbody>
-  </table>
-    
-{/foreach}
+<div class="conteo">
+<h1 class="revealUp3">Control de datos</h1>
+</div>
+</tr></tr>
+<h2>Datos de pacientes:</h2>
+<table class="table">
+<thead class="table-light">
+        <tr class="contenedor">
+            <th class="nombre" scope="col">Nombre</th>
+            <th class="edad" scope="col">Edad</th>
+            <th class="dni" scope="col">DNI</th>
+            <th class="motivo" scope="col">Motivo de consulta</th>
+            <th class="obrasocial" scope="col">Obra social</th>
+        </tr>
+    </thead>
+{include file="listaAdminPacientes.tpl"}
 {include file="footer.tpl"}

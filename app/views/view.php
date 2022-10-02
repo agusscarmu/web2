@@ -17,22 +17,16 @@ class userView{
     function showIngresar(){
         $this->smarty->display('formLogin.tpl');
         }
-    
-
-    function showNosotros(){
-        echo $this->html;
-        ?>
-        <h1>nosotros</h1>
-        <?php
-        echo $this->html2;
-        }
-
    
     function showAdministracion($pacientes){
-        $this->smarty->assign('count',(count($pacientes)));
         $this->smarty->assign('pacientes',$pacientes);
-        $this->smarty->display('Administracion.tpl');
+        $this->smarty->display('listaAdminPacientes.tpl');
         }
+    
+    function showObrasocial($oSocial){
+        $this->smarty->assign('osocial',$oSocial);
+        $this->smarty->display('Administracion.tpl');
+    }
 
 
 }

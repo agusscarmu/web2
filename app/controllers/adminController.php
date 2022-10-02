@@ -2,13 +2,14 @@
 require_once "./app/views/view.php";
 require_once "./app/models/editModel.php";
 
-class adminController{
 
+class adminController{
+     
     private $model;
 
     public function __construct(){
         $this -> model = new editModel();
-    }
+        }
 
     function addRegistro(){
             $name= $_POST['name'];
@@ -25,7 +26,12 @@ class adminController{
         header("Location: " . ADMIN_URL);
         }
 
+    function modificarPaciente($id){
+        $this->model->modificarPaciente($id);
+        header("Location: " . ADMIN_URL);
+    }
 
+   
 
 }
 
