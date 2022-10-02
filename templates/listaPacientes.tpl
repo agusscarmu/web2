@@ -1,7 +1,16 @@
 {include file="header.tpl"}
 
 <div class="conteo">
+{if {$count}>1}
     <h1 class="revealUp2">Actualmente hay {$count} pacientes esperando a ser atendidos</h1>
+{/if}
+{if {$count}==1}
+    <h1 class="revealUp2">Actualmente hay {$count} paciente esperando a ser atendido</h1>
+{/if}
+{if {$count}==0}
+    <h1 class="revealUp2">Actualmente no hay pacientes esperando a ser atendidos</h1>
+{/if}
+    
 </div>
 <div>
     <h1 class="revealUp3"> Lista de pacientes: </h1>

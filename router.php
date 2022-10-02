@@ -4,6 +4,7 @@ require_once "./app/controllers/pageController.php";
 require_once "./app/controllers/loginController.php";
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 define('ADMIN_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/administracion');
+define('MODIF_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/modificar');
 
 
 
@@ -27,9 +28,14 @@ switch($parse[0]){
     $adminController->addRegistro();
     break;
 
+    case 'actualizar':
+    $adminController->actualizarPaciente();
+    break;
+
     case 'modificar':
     $id = $parse[1];
     $adminController->modificarPaciente($id);
+
     break;
 
     case 'borrar':

@@ -12,7 +12,9 @@ class editModel{
 
                                     FROM pacientes 
         
-                                    INNER JOIN obrasocial ON (pacientes.ID_obrasocial=obrasocial.id)");
+                                    INNER JOIN obrasocial ON (pacientes.ID_obrasocial=obrasocial.id) 
+                                    
+                                    ORDER BY id DESC LIMIT 50");
         $query->execute();
         $px = $query->fetchAll(PDO::FETCH_OBJ);
         return $px;
@@ -31,6 +33,13 @@ class editModel{
     }
 
     public function modificarPaciente($id){
+        $query = $this->db->prepare("SELECT * FROM pacientes WHERE id =?");
+        $query->execute([$id]);
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 
+    public function actualizarPaciente($id,$name,$dni,$edad,$motivo,$obrasocial){
+        $query = $this->db->prepare("UPDATE pacientes SET nombre=?,edad=?,dni=?,motivo=?,ID_obrasocial=? WHERE id=?");
+        $query -> execute([$name, $edad, $dni, $motivo, $obrasocial, $id]);
     }
 }

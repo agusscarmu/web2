@@ -28,5 +28,10 @@ class userView{
         $this->smarty->display('Administracion.tpl');
     }
 
+    function modificarPaciente($modifPx,$oSocial){
+        $this->smarty->assign('paciente',$modifPx);
+        $this->smarty->assign('osocial',$oSocial);
+        $this->smarty->display('modificarPaciente.tpl');
+    }
 
 }

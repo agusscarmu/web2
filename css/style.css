@@ -35,6 +35,10 @@ body{
     margin: 18%;
 }
 
+.modifpx{
+    margin-bottom: 50%;
+}
+
 
 .maillogin{
     margin-left: 15%;
@@ -74,6 +78,7 @@ body{
     animation: 5s anim-lineUp;
 }
 
+
 h1{
     color:aliceblue;
     height: 5%;
@@ -86,6 +91,7 @@ h1{
     justify-content: center;
     align-items: center;
 }
+
 h2{
     color: aliceblue;
     text-decoration: underline;
