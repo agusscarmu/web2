@@ -17,12 +17,9 @@ body{
 }
 
 .login{
-    margin-left: 15%;
-    margin-right: 15%;
-    border-bottom: 20%;
-    padding-bottom: 30%;
-    padding-top: 20%;
     background-color: aliceblue;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .singin{
@@ -117,7 +114,11 @@ h2{
     padding: 0;
     text-align: center;
     overflow: hidden;
-    display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.botonlogin{
+    margin: auto;
     align-items: center;
 }

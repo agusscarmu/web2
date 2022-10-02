@@ -41,7 +41,7 @@
 
 </div>
 <div class="conteo">
-<h1 class="revealUp3">Control de datos</h1>
+<h1 class="revealUp3">Gestion de datos</h1>
 </div>
 </tr></tr>
 <h2>Datos de pacientes:</h2>
@@ -55,5 +55,6 @@
             <th class="obrasocial" scope="col">Obra social</th>
         </tr>
     </thead>
+
 {include file="listaAdminPacientes.tpl"}
 {include file="footer.tpl"}
