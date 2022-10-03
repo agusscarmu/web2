@@ -23,15 +23,11 @@ class pageController{
 
     public function getNewPx(){
         $pacientes = $this->model->getPacientes();
-        $this->view->showAdministracion($pacientes);
+        $oSocial = $this->osmodel->getObrasocial();
+        $this->view->showAdministracion($pacientes, $oSocial);
     }
     public function getIngreso(){
         $this->view->showIngresar();
-    }
-
-    function getObrasocial(){
-        $oSocial = $this->osmodel->getObrasocial();
-        $this->view->showObrasocial($oSocial);
     }
 
 }

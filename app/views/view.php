@@ -18,15 +18,12 @@ class userView{
         $this->smarty->display('formLogin.tpl');
         }
    
-    function showAdministracion($pacientes){
+    function showAdministracion($pacientes, $oSocial){
         $this->smarty->assign('pacientes',$pacientes);
-        $this->smarty->display('listaAdminPacientes.tpl');
-        }
-    
-    function showObrasocial($oSocial){
+        $this->smarty->assign('count',(count($pacientes)));
         $this->smarty->assign('osocial',$oSocial);
         $this->smarty->display('Administracion.tpl');
-    }
+        }
 
     function modificarPaciente($modifPx,$oSocial){
         $this->smarty->assign('paciente',$modifPx);

@@ -56,7 +56,6 @@ switch($parse[0]){
     break;
 
     case 'administracion':
-    $pageController->getObrasocial();
     $pageController->getNewPx();
     break;
         
