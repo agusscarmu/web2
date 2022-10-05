@@ -82,6 +82,11 @@ class adminController{
         header("Location: " . ADMINOS_URL);
         }
     
+    function aviso($id){
+        $obra = $this->osmodel->getObrasocialbyID($id);
+        $this->view->aviso($obra);
+
+    } 
 }
 
 

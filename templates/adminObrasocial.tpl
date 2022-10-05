@@ -104,7 +104,7 @@
         <th class="domicilio">{$obra->domicilio}</th>
         <td class="telefono">{$obra->telefono}</td>
         <td class="extra2"><a href='editar/{$obra->ID}' type='button' class='btn btn-primary'>Modificar</a></td>
-        <td class="extra"><a href='eliminar/{$obra->ID}' type='button' class='btn ml-auto btn-danger'>Borrar</a></td>
+        <td class="extra"><a href='aviso/{$obra->ID}' type='button' class='btn ml-auto btn-danger'>Borrar</a></td>
 
     
       </tr>

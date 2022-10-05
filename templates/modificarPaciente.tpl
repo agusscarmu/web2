@@ -79,7 +79,7 @@
     </form>
 </div>
 <div class="ml-5 abs-center">
-<a href='borrar/{$paciente[0]->ID}' type='button' class='btn btn-danger shadow-lg p-3 mb-5 bg-body rounded'>Borrar paciente</a>
+<a href='borrar/{$paciente[0]->ID}' type='button' class='revealUp3 btn btn-danger shadow-lg p-3 mb-5 bg-body rounded'>Borrar paciente</a>
 </div>
 
  </section>

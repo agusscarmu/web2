@@ -58,3 +58,7 @@
     </form>
 
 </div>
+<div class="ml-5 abs-center">
+<a href='borrar/{$obrasocial[0]->ID}' type='button' class='revealUp3 btn btn-danger shadow-lg p-3 mb-5 bg-body rounded'>Borrar obra social</a>
+</div>
+{include file="footer.tpl"}

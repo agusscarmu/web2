@@ -29,7 +29,12 @@ class userView{
         $this->smarty->assign('pacientes', $search);
         $this->smarty->display('searchPaciente.tpl');
     }
-   
+    
+    function aviso ($obra){
+        $this->smarty->assign('obra', $obra);
+        $this->smarty->display('avisoelim.tpl');
+    }
+
     function showAdminPx($pacientes, $oSocial){
         $this->smarty->assign('pacientes',$pacientes);
         $this->smarty->assign('count',(count($pacientes)));

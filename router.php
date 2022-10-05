@@ -9,6 +9,7 @@ define('SEARCH_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'
 define('VIEW_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/ver');
 define('ADMINOS_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/adminseguros');
 define('MODIFOS_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/editar');
+define('AVISO_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/aviso');
 
 
 
@@ -30,6 +31,11 @@ $loginController = new loginController;
 switch($parse[0]){
     case 'agregarpx':
     $adminController->addRegistro();
+    break;
+
+    case 'aviso':
+    $id=$parse[1];
+    $adminController->aviso($id);
     break;
 
     case 'agregaros':
