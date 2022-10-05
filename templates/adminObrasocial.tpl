@@ -68,13 +68,13 @@
 
 <div class="conteo">
 {if {$count}>1}
-    <h1 class="revealUp3">Actualmente hay {$count} obras sociales registradas</h1>
+    <h1 class="revealUp3">El sistema cuenta con {$count} obras sociales registradas</h1>
 {/if}
 {if {$count}==1}
-    <h1 class="revealUp3">Actualmente hay {$count} obra social registrada</h1>
+    <h1 class="revealUp3">El sistema cuenta con {$count} obra social registrada</h1>
 {/if}
 {if {$count}==0}
-    <h1 class="revealUp3">Actualmente no hay obras sociales registradas</h1>
+    <h1 class="revealUp3">El sistema no cuenta con obras sociales registradas</h1>
 {/if}
 </div>
 </tr></tr>
