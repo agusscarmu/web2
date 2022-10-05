@@ -17,17 +17,36 @@ class pageController{
     }
     public function getPacientes(){
         $pacientes = $this->model->getPacientes();
-        $this->view->showPacientes($pacientes);
+        $oSocial = $this->osmodel->getObrasocial();
+        $this->view->showPacientes($pacientes, $oSocial);
 
     }
 
     public function getNewPx(){
         $pacientes = $this->model->getPacientes();
         $oSocial = $this->osmodel->getObrasocial();
-        $this->view->showAdministracion($pacientes, $oSocial);
+        $this->view->showAdminPx($pacientes, $oSocial);
     }
+
     public function getIngreso(){
         $this->view->showIngresar();
+    }
+
+    public function searchPx(){
+        $id= $_GET['obrasocial'];
+        $search=$this->model->searchPx($id);
+        $this->view->searchPaciente($search);
+    }
+
+    public function verPaciente($id){
+        $viewPx=$this->model->viewPx($id);
+        $this->view->viewPx($viewPx);
+    }
+
+    public function getAdmin(){
+        $pacientes = $this->model->getPacientes();
+        $oSocial = $this->osmodel->getObrasocial();
+        $this->view->showAdministracion($pacientes, $oSocial);
     }
 
 }

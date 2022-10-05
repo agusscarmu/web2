@@ -33,88 +33,31 @@
       </nav>
   
     <section>
-<div>
-  <h1 class="revealUp2">Administracion</h1>
-</div>
+  <div class="d-flex justify-content-center ml-5 mr-5">
 
-<div class="revealUp contenedoradmin shadow-lg p-3 mb-5 bg-body rounded">
-    <form action="agregar" method="POST">
-    <label for="basic-url" class="form-label">Datos del paciente:</label>
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Paciente</span>
-      <input type="text" class="form-control" name="name" placeholder="Nombre y Apellido" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="revealUp card shadow-lg ml-5 mr-auto p-3 mb-5 bg-body rounded h-25 d-inline-block mh-100" style="width: 500px">
+    <img src="./images/paciente.jpeg" class="card-img-top" height="300" width="200">
+  
+    <div class="card-body">
+      <h5 class="card-title">Administrar listado de pacientes</h5>
+      <p class="card-text">Agregar, modificar o eliminar datos de los pacientes registrados</p>
+      <a href="adminpacientes" class="btn btn-primary">Administrar pacientes</a>
     </div>
-    
-    <div class="input-group mb-3">
-    <span class="input-group-text">Edad</span>
-      <input type="number" class="form-control" name="edad" placeholder="Edad" aria-label="Recipient's username" aria-describedby="basic-addon2">
     </div>
-    
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon3">DNI</span>
-      <input type="number" class="form-control" name="dni" placeholder="D.N.I." id="basic-url" aria-describedby="basic-addon3">
-    </div>
-    
-    <div class="input-group mb-3">
-      <span class="input-group-text">Obra social</span>
-            <select name="obrasocial" class="form-control" aria-label="Recipient's username">
-            {foreach from=$osocial item=$obras}
-                <option value="{$obras->ID}">{$obras->nombre}</option>
-            {/foreach}
-            </select>
-      
-    </div>
-   
-    
-    <div class="input-group">
-      <span class="input-group-text">Motivo de consulta</span>
-      <textarea class="form-control" name="motivo" placeholder="Ingrese motivo de consulta" aria-label="With textarea"></textarea>
-    </div>
-        <button type="submit" class="botonagregar btn btn-primary">Agregar paciente</button>
-    </form>
 
-</div>
-<div class="conteo">
-{if {$count}>1}
-    <h1 class="revealUp3">Actualmente hay {$count} pacientes esperando a ser atendidos</h1>
-{/if}
-{if {$count}==1}
-    <h1 class="revealUp3">Actualmente hay {$count} paciente esperando a ser atendido</h1>
-{/if}
-{if {$count}==0}
-    <h1 class="revealUp3">Actualmente no hay pacientes esperando a ser atendidos</h1>
-{/if}
-    
-</div>
-</tr></tr>
-<h2>Datos de pacientes:</h2>
-<table class="table">
-<thead class="table-light">
-        <tr class="contenedor">
-            <th class="nombre" scope="col">Nombre</th>
-            <th class="edad" scope="col">Edad</th>
-            <th class="dni" scope="col">DNI</th>
-            <th class="motivo" scope="col">Motivo de consulta</th>
-            <th class="obrasocial" scope="col">Obra social</th>
-        </tr>
-    </thead>
+    <div class="revealUp2 card shadow-lg mr-5 ml-auto p-3 ml-5 mb-5 bg-body rounded h-25 d-inline-block mh-100" style="width: 500px">
+    <img src="./images/obrasocial.jpeg" class="card-img-top" height="300" width="200">
 
-    {foreach from=$pacientes item=$paciente}
-    
-      <table class="table vertical-align: middle">
-      
-      <tbody class="tablapaciente2">
-      <tr class="contenedor">
-        <th class="nombre">{$paciente->nombre}</th>
-        <td class="edad">{$paciente->edad}</td>
-        <td class="dni">{$paciente->dni}</td>
-        <td class="motivo">{$paciente->motivo}</td>
-        <td class="obrasocial">{$paciente->nombre2}</td>
-        <td><a href='borrar/{$paciente->id}' type='button' class='btn btn-danger'>Borrar</a></td>
-        <td><a href='modificar/{$paciente->id}' type='button' class='btn btn-primary'>Modificar</a></td>
-      </tr>
-      </tbody>
-    </table>
-      
-  {/foreach}
+    <div class="card-body">
+      <h5 class="card-title">Administrar listado de obras sociales</h5>
+      <p class="card-text">Agregar, modificar o eliminar datos de las obras sociales registradas</p>
+      <a href="adminseguros" class="btn btn-primary">Administrar obras sociales</a>
+    </div>
+    </div>
+</div>
+<div class="">
+<h1 class="revealUp3">El sistema cuenta con un registro de: {$countpx} pacientes y {$countos} obras sociales</h1>
+</div>
+  
+
 {include file="footer.tpl"}

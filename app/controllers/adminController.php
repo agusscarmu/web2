@@ -47,6 +47,41 @@ class adminController{
         $this->model->actualizarPaciente($id,$name,$dni,$edad,$motivo,$obrasocial);
         header("Location: " . BASE_URL);
     }
+
+    function getObras(){
+        $obras = $this->osmodel->getObrasocial();
+        $this->view->showObras($obras);
+    }
+
+    function addOs(){
+        $name= $_POST['name'];
+        $tipo=$_POST['tipo'];
+        $domicilio=$_POST['domicilio'];
+        $telefono=$_POST['telefono'];
+        $id= $this->osmodel->insertOs($name,$tipo,$domicilio,$telefono);
+        header("Location: " . ADMINOS_URL);
+    }
+
+    function editarOs($id){
+        $oSocial = $this->osmodel->getObrasocialbyID($id);
+        $this->view->modificarObrasocial($oSocial);
+    }
+
+    function actualizarOs(){
+        $id=$_POST['id'];
+        $name= $_POST['name'];
+        $tipo=$_POST['tipo'];
+        $domicilio=$_POST['domicilio'];
+        $telefono=$_POST['telefono'];
+        $this->osmodel->actualizarOs($id,$name,$tipo,$domicilio,$telefono);
+        header("Location: " . ADMINOS_URL);
+    }
+
+    function eliminarOs($id){
+        $this->osmodel->eliminarOs($id);
+        header("Location: " . ADMINOS_URL);
+        }
+    
 }
 
 

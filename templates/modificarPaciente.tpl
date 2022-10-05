@@ -33,9 +33,8 @@
     <form action="actualizar" method="POST">
     <label for="basic-url" class="form-label">Datos del paciente:</label>
    
-    <div class="mb-3">
-        <span class="input-group-text" id="basic-addon1">ID</span>
-        <input type="text" id="disabledTextInput" name="id" value="{$paciente[0]->ID}" class="form-control" placeholder="{$paciente[0]->ID}">
+    <div class="mb-3 ">
+        <input type="hidden" id="disabledTextInput" name="id" value="{$paciente[0]->ID}" class="form-control" placeholder="{$paciente[0]->ID}">
     </div>
         
     <div class="input-group mb-3">
@@ -79,7 +78,7 @@
         <button type="submit" class="botonagregar btn btn-success">Actualizar paciente</button>
     </form>
 </div>
-<div class="abs-center">
+<div class="ml-5 abs-center">
 <a href='borrar/{$paciente[0]->ID}' type='button' class='btn btn-danger shadow-lg p-3 mb-5 bg-body rounded'>Borrar paciente</a>
 </div>
 

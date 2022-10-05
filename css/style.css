@@ -1,13 +1,13 @@
 body{
-    background: linear-gradient(220.55deg, #5D85A6 0%, #0E2C5E 100%);
+    background:linear-gradient(0.25turn, #5D85A6, #0E2C5E);
 }
 
 
 .contenedor{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
-    "nombre edad dni motivo obrasocial";
+    "nombre edad dni motivo obrasocial extra";
 }
 
 .contenedoradmin{
@@ -15,7 +15,10 @@ body{
     margin-right: 15%;
     background-color: aliceblue;
 }
-
+.img{
+    max-height: 2%;
+    max-width: 2%;
+}
 .login{
     background-color: aliceblue;
     margin-left: 25%;
@@ -97,10 +100,15 @@ h2{
     text-decoration: underline;
 }
 
+#busqueda{
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
 .tablaspacientes{
     margin-left: 12%;
     margin-right: 12%;
-    margin-bottom: 22%;
+    margin-bottom: 10%;
     background-color: rgb(192, 211, 227);
 }
 

@@ -42,4 +42,24 @@ class editModel{
         $query = $this->db->prepare("UPDATE pacientes SET nombre=?,edad=?,dni=?,motivo=?,ID_obrasocial=? WHERE id=?");
         $query -> execute([$name, $edad, $dni, $motivo, $obrasocial, $id]);
     }
+    public function searchPx($id){
+        $query = $this->db->prepare("SELECT pacientes.id, pacientes.nombre, pacientes.edad, pacientes.dni, pacientes.motivo, obrasocial.nombre as nombre2, obrasocial.tipo as tipo 
+
+                                    FROM pacientes 
+
+                                    INNER JOIN obrasocial ON (pacientes.ID_obrasocial=obrasocial.id)  WHERE ID_obrasocial = ?");
+        $query -> execute([$id]);
+        $px = $query->fetchAll(PDO::FETCH_OBJ);
+        return $px;
+    }
+    public function viewPx($id){
+        $query = $this->db->prepare("SELECT pacientes.id, pacientes.nombre, pacientes.edad, pacientes.dni, pacientes.motivo, obrasocial.nombre as nombre2, obrasocial.tipo as tipo 
+
+                                    FROM pacientes 
+                                
+                                    INNER JOIN obrasocial ON (pacientes.ID_obrasocial=obrasocial.id)  WHERE pacientes.id = ?");
+        $query -> execute([$id]);
+        $px = $query->fetchAll(PDO::FETCH_OBJ);
+        return $px;  
+    }
 }

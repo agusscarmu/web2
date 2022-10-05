@@ -5,6 +5,10 @@ require_once "./app/controllers/loginController.php";
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 define('ADMIN_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/administracion');
 define('MODIF_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/modificar');
+define('SEARCH_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/buscar');
+define('VIEW_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/ver');
+define('ADMINOS_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/adminseguros');
+define('MODIFOS_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/editar');
 
 
 
@@ -24,18 +28,48 @@ $loginController = new loginController;
 
         
 switch($parse[0]){
-    case 'agregar':
+    case 'agregarpx':
     $adminController->addRegistro();
+    break;
+
+    case 'agregaros':
+    $adminController->addOs();
+    break;
+
+    case 'buscar':
+    $pageController->searchPx();
     break;
 
     case 'actualizar':
     $adminController->actualizarPaciente();
     break;
 
+    case 'ver':
+    $id = $parse[1];
+    $pageController->verPaciente($id);
+    break;
+    
+    case 'editar':
+    $id = $parse[1];
+    $adminController->editarOs($id);
+    break;
+
+    case 'actualizaros':
+    $adminController->actualizarOs();
+    break;
+
+    case 'eliminar':
+    $id = $parse[1];
+    $adminController->eliminarOs($id);
+    break;
+
+    case 'adminseguros':
+    $adminController->getObras();
+    break;
+
     case 'modificar':
     $id = $parse[1];
     $adminController->modificarPaciente($id);
-
     break;
 
     case 'borrar':
@@ -56,6 +90,10 @@ switch($parse[0]){
     break;
 
     case 'administracion':
+    $pageController->getAdmin();
+    break;
+
+    case 'adminpacientes':
     $pageController->getNewPx();
     break;
         
