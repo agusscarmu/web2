@@ -100,7 +100,7 @@ switch($parse[0]){
     break;
 
     case 'adminpacientes':
-    $pageController->getNewPx();
+    $adminController->getNewPx();
     break;
         
     

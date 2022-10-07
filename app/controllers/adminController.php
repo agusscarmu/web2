@@ -1,6 +1,7 @@
 <?php
 require_once "./app/views/view.php";
 require_once "./app/models/editModel.php";
+require_once "./app/helper/loginHelper.php";
 
 
 class adminController{
@@ -13,6 +14,10 @@ class adminController{
         $this -> model = new editModel();
         $this -> osmodel = new obrasocialModel();
         $this -> view = new userView();
+
+        //barrera de seguridad
+        $helper = new loginHelper();
+        $helper->validate();
         }
 
     function addRegistro(){
@@ -45,7 +50,7 @@ class adminController{
         $motivo=$_POST['motivo'];
         $obrasocial=$_POST['obrasocial'];
         $this->model->actualizarPaciente($id,$name,$dni,$edad,$motivo,$obrasocial);
-        header("Location: " . BASE_URL);
+        header("Location: " . ADMIN_URL);
     }
 
     function getObras(){
@@ -60,6 +65,12 @@ class adminController{
         $telefono=$_POST['telefono'];
         $id= $this->osmodel->insertOs($name,$tipo,$domicilio,$telefono);
         header("Location: " . ADMINOS_URL);
+    }
+
+    public function getNewPx(){
+        $pacientes = $this->model->getPacientes();
+        $oSocial = $this->osmodel->getObrasocial();
+        $this->view->showAdminPx($pacientes, $oSocial);
     }
 
     function editarOs($id){

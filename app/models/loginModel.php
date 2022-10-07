@@ -9,8 +9,8 @@ class loginModel{
     }
 
     public function insertLogin($mail){
-        $query = $this->db->prepare("SELECT * FROM medicos WHERE mail =$mail and pass=?");
-        $query->execute([]);
+        $query = $this->db->prepare("SELECT * FROM medicos WHERE mail = ?");
+        $query->execute([$mail]);
         $medico = $query->fetch(PDO::FETCH_OBJ);
         return $medico;
         
