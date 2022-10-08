@@ -2,7 +2,7 @@
 require_once "./app/views/view.php";
 require_once "./app/models/editModel.php";
 require_once "./app/models/obrasocialModel.php";
-require_once"./app/helper/loginHelper.php";
+require_once "./app/helper/loginHelper.php";
 
 class pageController{
     private $view;
@@ -17,6 +17,7 @@ class pageController{
         $this -> loginmodel = new loginModel();
         $this -> osmodel = new obrasocialModel();
         $this -> helper = new loginHelper();
+        session_start();
     }
     public function getPacientes(){
         $pacientes = $this->model->getPacientes();

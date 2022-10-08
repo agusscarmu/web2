@@ -2,6 +2,10 @@ body{
     background:linear-gradient(0.25turn, #5D85A6, #0E2C5E);
 }
 
+.navegacion{
+    justify-content: space-between;
+}
+
 
 .contenedor{
     display: grid;
@@ -32,10 +36,6 @@ body{
 .passlogin{
     margin-left: 15%;
     margin-right: 15%;
-}
-
-.relleno{
-    margin: 18%;
 }
 
 .modifpx{

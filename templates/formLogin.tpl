@@ -12,11 +12,16 @@
         <label for="exampleInputPassword1" class="form-label">Su contraseña</label>
         <input type="password" class="form-control" name="loginpass" id="exampleInputPassword1">
       </div>
+      {if $error}
+        <div class="alert alert-danger ml-5 mr-5 d-flex justify-content-center">
+        {$error}
+        </div>
+      {/if}
       <div class="text-center">
       <button type="submit" class="revealUp3 botonlogin btn btn-sm btn-primary">Iniciar sesion</button>
       </div>
 </Form>
 </div>
-<div class="relleno">
-</div>
+
+
 {include file="footer.tpl"}

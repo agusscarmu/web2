@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <base href="{MODIFOS_URL}">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Consultorio</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-    <header>
-    </header>
-    <nav class="navbar-expand-sm   navbar-light bg-light nav-pills nav-fill">
-
-        <div class="shadow-lg p-3 mb-5 bg-body rounded">
-          <ul class="nav">
-            <li class="mr-auto">
-              <a class="nav-link " href="administracion">Volver</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-  
-<section>
+{include file="header.tpl"}
 <div>
   <h1 class="revealUp2">Modificar obra social</h1>
 </div>

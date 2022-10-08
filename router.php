@@ -29,6 +29,18 @@ $loginController = new loginController;
 
         
 switch($parse[0]){
+    case 'ingreso':
+    $loginController->login();
+    break;
+
+    case 'ingresar':
+    $pageController->getIngreso();
+    break;
+
+    case 'logout':
+    $loginController->logout();
+    break;
+    
     case 'agregarpx':
     $adminController->addRegistro();
     break;
@@ -85,14 +97,6 @@ switch($parse[0]){
 
     case 'pacientes':
     $pageController->getPacientes();
-    break;
-
-    case 'ingreso':
-    $loginController->login();
-    break;
-
-    case 'ingresar':
-    $pageController->getIngreso();
     break;
 
     case 'administracion':

@@ -15,7 +15,8 @@ class userView{
         $this->smarty->assign('count',(count($pacientes)));
         $this->smarty->display('listaPacientes.tpl');
     }
-    function showIngresar(){
+    function showIngresar($error = null){
+        $this->smarty->assign("error" ,$error);
         $this->smarty->display('formLogin.tpl');
         }
        
