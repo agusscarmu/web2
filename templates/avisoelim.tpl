@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/styleAviso.css">
 
 <div class="revealUp tableroaviso shadow-lg p-3 bg-body rounded mb-6">
 <h3>¿Desea eliminar {$obra[0]->nombre}?</h3>

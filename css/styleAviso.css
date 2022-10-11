@@ -1,0 +1,61 @@
+:root{
+  --gradient:  linear-gradient(to right, #5D85A6,#c75151);
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: sans-serif;
+  color: #222;
+  background: beige;
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: fondo-anim 20s infinite alternate;
+}
+@keyframes fondo-anim{
+  0%{background-position: left;} /*por defecto*/
+  100%{background-position: right;}
+}
+
+.tableroaviso{
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: rgb(228, 228, 228);
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+.revealUp{
+  animation: 2s anim-lineUp;
+}
+.revealUp2{
+  animation: 4s anim-lineUp;
+}
+.revealUp3{
+  animation: 6s anim-lineUp;
+}
+
+.btnvolver{
+  margin-right: 15%;
+}
+
+.btnborrar{
+  margin-left: 15%;
+}

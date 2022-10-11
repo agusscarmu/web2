@@ -30,7 +30,7 @@
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       Dr. {$smarty.session.nombre}
     </a>
-    <ul class="dropdown-menu mw-100">
+    <ul class="revealDown dropdown-menu align-items">
       <li><a class="dropdown-item" href="administracion">Administracion</a></li>
       <li><a class="dropdown-item" href="logout">Cerrar sesion</a></li>
     </ul>

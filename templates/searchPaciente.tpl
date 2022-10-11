@@ -1,8 +1,8 @@
 {include file="header.tpl"}
    
     <div>
-    {if {$paciente}}
-        <h1 class="revealUp3"> Lista de pacientes con obra social: {$paciente->nombre2} </h1>
+    {if {$pacientes}}
+        <h1 class="revealUp3"> Lista de pacientes con obra social: {$pacientes[0]->nombre2} </h1>
     {else}
         <h1 class="revealUp3"> No hay ningun paciente registrado con dicha obra social </h1>
     {/if}
