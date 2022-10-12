@@ -28,7 +28,7 @@
   {else}
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Dr. {$smarty.session.nombre}
+      {$smarty.session.nombre}
     </a>
     <ul class="revealDown dropdown-menu align-items">
       <li><a class="dropdown-item" href="administracion">Administracion</a></li>

@@ -16,7 +16,6 @@ class adminController{
         $this -> osmodel = new obrasocialModel();
         $this -> view = new userView();
 
-        //barrera de seguridad
         $this->helper = new loginHelper();
         }
 
