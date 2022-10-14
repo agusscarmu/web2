@@ -5,7 +5,7 @@
 </div>
 
 <div class="revealUp contenedoradmin shadow-lg p-3 mb-5 bg-body rounded">
-    <form action="agregarpx" method="POST">
+    <form action="agregarpx" method="POST" enctype="multipart/form-data">
     <label for="basic-url" class="form-label">Datos del paciente:</label>
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1">Paciente</span>
@@ -31,11 +31,15 @@
             </select>
       
     </div>
-   
-    
-    <div class="input-group">
+
+    <div class="input-group mb-3">
       <span class="input-group-text">Motivo de consulta</span>
       <textarea class="form-control" name="motivo" placeholder="Ingrese motivo de consulta" aria-label="With textarea"></textarea>
+    </div>
+    
+    <div class="input-group mb-3">
+    <span class="input-group-text mb-2">Estudio de imagen
+    <input class="ml-3" type="file" name="imagen" id="imageToUpload"></span>
     </div>
         <button type="submit" class="botonagregar btn btn-primary">Agregar paciente</button>
     </form>

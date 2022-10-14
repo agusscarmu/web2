@@ -20,12 +20,23 @@ class editModel{
         return $px;
     }
 
-    public function insertPaciente($name, $edad, $dni, $motivo, $obrasocial){
-        $query = $this->db->prepare("INSERT INTO pacientes(nombre, edad, dni, motivo, ID_obrasocial) VALUES (?,?,?,?,?)");
-        $query -> execute([$name, $dni, $edad, $motivo, $obrasocial]);
+    public function insertPaciente($name, $edad, $dni, $motivo, $obrasocial, $imagen=null){
+        $pathImg = null;
+
+        if ($imagen)
+            $pathImg = $this->subirImagen($imagen);
+
+        $query = $this->db->prepare("INSERT INTO pacientes(nombre, edad, dni, motivo, imagen, ID_obrasocial) VALUES (?,?,?,?,?,?)");
+        $query -> execute([$name, $dni, $edad, $motivo, $pathImg, $obrasocial]);
         //var_dump($query->errorInfo());
     }
 
+    private function subirImagen($imagen){
+        $temporal = './imgs/' . uniqid() . '.jpg';
+        move_uploaded_file($imagen, $temporal);
+        return $temporal;
+
+    }
   
     public function borrarPaciente($id){
         $query = $this->db->prepare('DELETE FROM pacientes WHERE id = ?');
@@ -53,7 +64,7 @@ class editModel{
         return $px;
     }
     public function viewPx($id){
-        $query = $this->db->prepare("SELECT pacientes.id, pacientes.nombre, pacientes.edad, pacientes.dni, pacientes.motivo, obrasocial.nombre as nombre2, obrasocial.tipo as tipo 
+        $query = $this->db->prepare("SELECT pacientes.id, pacientes.nombre, pacientes.edad, pacientes.dni, pacientes.motivo, pacientes.imagen, obrasocial.nombre as nombre2, obrasocial.tipo as tipo 
 
                                     FROM pacientes 
                                 
@@ -62,4 +73,5 @@ class editModel{
         $px = $query->fetchAll(PDO::FETCH_OBJ);
         return $px;  
     }
-}
+
+}   

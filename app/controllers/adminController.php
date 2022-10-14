@@ -26,7 +26,15 @@ class adminController{
             $dni=$_POST['dni'];
             $motivo=$_POST['motivo'];
             $obrasocial=$_POST['obrasocial'];
-            $id= $this->model->insertPaciente($name,$dni,$edad,$motivo,$obrasocial);
+        
+            if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png"){
+            $imagen=$_FILES['imagen']['tmp_name'];
+            $this->model->insertPaciente($name,$dni,$edad,$motivo,$obrasocial,$imagen);
+            }
+           
+            else{
+            $this->model->insertPaciente($name,$dni,$edad,$motivo,$obrasocial);
+            }
             header("Location: " . BASE_URL . "adminpacientes");
         }
     

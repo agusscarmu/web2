@@ -1,40 +1,46 @@
 {include file="header.tpl"}
-   
-    <div>
-        <h1 class="revealUp3"> Inspeccionar a {$pacientes[0]->nombre} </h1>
+    <h1 class="revealUp2">Datos de {$pacientes[0]->nombre}</h1>
+    <div class="revealUp modifpx contenedoradmin shadow-lg p-3 mb-5 bg-body rounded">
+        
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Nombre</span>
+      <span class="form-control">{$pacientes[0]->nombre}</span>
     </div>
-    <div class="revealUp tablaspacientes shadow-lg p-3 bg-body rounded mb-6">
-    <form action="buscar" class="input-group mb-3" method="GET">
-      <input type="text" class="form-control" name="name" placeholder="Buscar paciente" aria-label="Username" aria-describedby="basic-addon1">
-      <button type="submit" class="input-group-prepend input-group-text"><img class="" src="./images/icone-loupe-noir.png" height="20" width="20"></button>
-    </form>
-    <table class="table">
-    <thead class="table-light">
-            <tr class="contenedor">
-                <th class="nombre" scope="col">Nombre</th>
-                <th class="edad" scope="col">Edad</th>
-                <th class="dni" scope="col">DNI</th>
-                <th class="motivo" scope="col">Motivo de consulta</th>
-                <th class="obrasocial" scope="col">Obra social</th>
-                <th class="extra" scope="col">Tipo de obra social</th>
-            </tr>
-        </thead>
-    {foreach from=$pacientes item=$paciente}
-        <table class="table vertical-align: middle">
-        
-        <tbody class="tablapaciente">
-        <tr class="contenedor">
-          <th class="nombre">{$paciente->nombre}</th>
-          <td class="edad">{$paciente->edad}</td>
-          <td class="dni">{$paciente->dni}</td>
-          <td class="motivo">{$paciente->motivo}</td>
-          <td class="obrasocial">{$paciente->nombre2}</td>
-          <td class="extra">{$paciente->tipo}</td>
-        </tr>
-        </tbody>
-      </table>
-        
-    {/foreach}
+    
+    <div class="input-group mb-3">
+    <span class="input-group-text">Edad</span>
+    <span class="form-control">{$pacientes[0]->edad}</span>
+    </div>
+    
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon3">DNI</span>
+      <span class="form-control">{$pacientes[0]->dni}</span>    
+      </div>
+    
+    <div class="input-group mb-3">
+      <span class="input-group-text">Obra social</span>
+      <span class="form-control">{$pacientes[0]->nombre2}</span>
+      <span class="input-group-text">Tipo de obra social</span>
+      <span class="form-control">{$pacientes[0]->tipo}</span>
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Motivo de consulta</span>
+      <span class="form-control">{$pacientes[0]->motivo}</span>
+    </div>
+
+    <div class="input-group mb-3">
+    <span class="input-group-text">Estudios de imagenes</span>
+    {if isset($pacientes->imagen)}
+     
+    {/if}
+    {if isset($pacientes[0]->imagen)}
+      <img src="{$pacientes[0]->imagen}"/>
+    {else}
+      <span class="form-control">No hay estudios hechos</span>
+    {/if}
+
+    
     </div>
     {include file="footer.tpl"}
     
