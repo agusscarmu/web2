@@ -23,19 +23,12 @@ class editModel{
     public function insertPaciente($name, $edad, $dni, $motivo, $obrasocial, $imagen=null){
         $pathImg = null;
 
-        if ($imagen)
-            $pathImg = $this->subirImagen($imagen);
+        if ($imagen){
+            $pathImg = $this->subirImagen($imagen);}
 
         $query = $this->db->prepare("INSERT INTO pacientes(nombre, edad, dni, motivo, imagen, ID_obrasocial) VALUES (?,?,?,?,?,?)");
         $query -> execute([$name, $dni, $edad, $motivo, $pathImg, $obrasocial]);
         //var_dump($query->errorInfo());
-    }
-
-    private function subirImagen($imagen){
-        $temporal = './imgs/' . uniqid() . '.jpg';
-        move_uploaded_file($imagen, $temporal);
-        return $temporal;
-
     }
   
     public function borrarPaciente($id){
@@ -49,9 +42,13 @@ class editModel{
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function actualizarPaciente($id,$name,$dni,$edad,$motivo,$obrasocial){
-        $query = $this->db->prepare("UPDATE pacientes SET nombre=?,edad=?,dni=?,motivo=?,ID_obrasocial=? WHERE id=?");
-        $query -> execute([$name, $edad, $dni, $motivo, $obrasocial, $id]);
+    public function actualizarPaciente($id,$name,$dni,$edad,$motivo,$obrasocial,$imagen=null){
+        $pathImg = null;
+
+        if ($imagen){
+            $pathImg = $this->subirImagen($imagen);}
+        $query = $this->db->prepare("UPDATE pacientes SET nombre=?,edad=?,dni=?,motivo=?,imagen=?,ID_obrasocial=? WHERE id=?");
+        $query -> execute([$name, $edad, $dni, $motivo, $pathImg, $obrasocial, $id]);
     }
     public function searchPx($id){
         $query = $this->db->prepare("SELECT pacientes.id, pacientes.nombre, pacientes.edad, pacientes.dni, pacientes.motivo, obrasocial.nombre as nombre2, obrasocial.tipo as tipo 
@@ -74,4 +71,10 @@ class editModel{
         return $px;  
     }
 
+    private function subirImagen($imagen){
+        $temporal = './imgs/' . uniqid() . '.jpg';
+        move_uploaded_file($imagen, $temporal);
+        return $temporal;
+
+    }
 }   

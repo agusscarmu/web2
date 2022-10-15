@@ -4,7 +4,7 @@
 </div>
 <div>
 <div class="revealUp modifpx contenedoradmin shadow-lg p-3 mb-5 bg-body rounded">
-    <form action="actualizar" method="POST">
+    <form action="actualizar" method="POST" enctype="multipart/form-data">
     <label for="basic-url" class="form-label">Datos del paciente:</label>
    
     <div class="mb-3 ">
@@ -44,10 +44,14 @@
       
     </div>
     
-    <div class="input-group">
+    <div class="input-group mb-3">
       <span class="input-group-text">Motivo de consulta</span>
       <input class="form-control" name="motivo" value="{$paciente[0]->motivo}" placeholder="Ingrese motivo de consulta" aria-label="With textarea"></input>
 
+    </div>
+    <div class="input-group mb-3">
+    <span class="input-group-text mb-2">Estudio de imagen
+    <input class="ml-3" type="file" name="imagen" id="imageToUpload"></span>
     </div>
         <button type="submit" class="botonagregar btn btn-success">Actualizar paciente</button>
     </form>

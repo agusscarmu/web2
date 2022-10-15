@@ -35,7 +35,7 @@
      
     {/if}
     {if isset($pacientes[0]->imagen)}
-      <img src="{$pacientes[0]->imagen}"/>
+      <img src="{$pacientes[0]->imagen}" class="img-fluid" alt="Responsive image"/>
     {else}
       <span class="form-control">No hay estudios hechos</span>
     {/if}
