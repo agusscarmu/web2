@@ -36,11 +36,13 @@
       <span class="input-group-text">Motivo de consulta</span>
       <textarea class="form-control" name="motivo" placeholder="Ingrese motivo de consulta" aria-label="With textarea"></textarea>
     </div>
-    
+   
     <div class="input-group mb-3">
     <span class="input-group-text mb-2">Estudio de imagen
-    <input class="ml-3" type="file" name="imagen" id="imageToUpload"></span>
+    <input class="ml-3" type="file" name="imagen" id="image-input"></span>
     </div>
+
+    
         <button type="submit" class="botonagregar btn btn-primary">Agregar paciente</button>
     </form>
 

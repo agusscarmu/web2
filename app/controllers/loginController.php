@@ -5,7 +5,7 @@ require_once "./app/models/loginModel.php";
 
 class loginController{
 
-    private $login;
+    private $loginModel;
     private $view;
 
     function __construct(){

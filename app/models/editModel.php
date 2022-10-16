@@ -46,9 +46,12 @@ class editModel{
         $pathImg = null;
 
         if ($imagen){
-            $pathImg = $this->subirImagen($imagen);}
+            $pathImg = $this->subirImagen($imagen);
         $query = $this->db->prepare("UPDATE pacientes SET nombre=?,edad=?,dni=?,motivo=?,imagen=?,ID_obrasocial=? WHERE id=?");
-        $query -> execute([$name, $edad, $dni, $motivo, $pathImg, $obrasocial, $id]);
+        $query -> execute([$name, $edad, $dni, $motivo, $pathImg, $obrasocial, $id]);}
+        else{  
+        $query = $this->db->prepare("UPDATE pacientes SET nombre=?,edad=?,dni=?,motivo=?,ID_obrasocial=? WHERE id=?");
+        $query -> execute([$name, $edad, $dni, $motivo, $obrasocial, $id]);}
     }
     public function searchPx($id){
         $query = $this->db->prepare("SELECT pacientes.id, pacientes.nombre, pacientes.edad, pacientes.dni, pacientes.motivo, obrasocial.nombre as nombre2, obrasocial.tipo as tipo 

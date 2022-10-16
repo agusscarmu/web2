@@ -51,8 +51,10 @@
     </div>
     <div class="input-group mb-3">
     <span class="input-group-text mb-2">Estudio de imagen
-    <input class="ml-3" type="file" name="imagen" id="imageToUpload"></span>
+    <input class="ml-3" type="file" name="imagen" id="imageToUpload">    <img src={$paciente[0]->imagen} class="img-thumbnail" width=30%>
+    </span>
     </div>
+        <button src="adminpaciente" class="botonagregar btn btn-primary">Volver</button>
         <button type="submit" class="botonagregar btn btn-success">Actualizar paciente</button>
     </form>
 </div>
