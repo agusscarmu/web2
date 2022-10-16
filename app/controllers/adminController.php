@@ -19,6 +19,13 @@ class adminController{
         $this->helper = new loginHelper();
         }
 
+    public function getAdmin(){
+        $this->helper->validate();
+        $pacientes = $this->model->getPacientes();
+        $oSocial = $this->osmodel->getObrasocial();
+        $this->view->showAdministracion($pacientes, $oSocial);
+    }
+    
     function addRegistro(){
             $this->helper->validate();
             $name= $_POST['name'];

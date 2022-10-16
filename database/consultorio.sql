@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-10-2022 a las 20:14:35
+-- Tiempo de generación: 17-10-2022 a las 00:59:56
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `medicos` (
   `ID` int(11) NOT NULL,
-  `nombre` text NOT NULL,
-  `mail` text NOT NULL,
-  `pass` text NOT NULL
+  `nombre` varchar(30) NOT NULL,
+  `mail` varchar(30) NOT NULL,
+  `pass` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -49,10 +49,10 @@ INSERT INTO `medicos` (`ID`, `nombre`, `mail`, `pass`) VALUES
 
 CREATE TABLE `obrasocial` (
   `ID` int(11) NOT NULL,
-  `nombre` text NOT NULL,
-  `tipo` text NOT NULL,
-  `domicilio` text NOT NULL,
-  `telefono` text NOT NULL
+  `nombre` varchar(15) NOT NULL,
+  `tipo` varchar(15) NOT NULL,
+  `domicilio` varchar(50) NOT NULL,
+  `telefono` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -75,7 +75,7 @@ INSERT INTO `obrasocial` (`ID`, `nombre`, `tipo`, `domicilio`, `telefono`) VALUE
 
 CREATE TABLE `pacientes` (
   `ID` int(11) NOT NULL,
-  `nombre` text NOT NULL,
+  `nombre` varchar(30) NOT NULL,
   `edad` int(11) NOT NULL,
   `dni` int(11) NOT NULL,
   `motivo` text NOT NULL,
@@ -89,10 +89,10 @@ CREATE TABLE `pacientes` (
 
 INSERT INTO `pacientes` (`ID`, `nombre`, `edad`, `dni`, `motivo`, `imagen`, `ID_obrasocial`) VALUES
 (32, 'Katarina Gonzalez', 31, 39482488, 'Cefalea', '', 2),
-(39, 'Julian Gomez', 40, 29848732, 'Dolor en hipocondrio derecho', '', 14),
-(40, 'Mariana Bianchi', 31, 34999223, 'Dolor en fosa iliaca derecha con vomitos ', '', 16),
+(39, 'Julian Gomez', 40, 29848732, 'Dolor en hipocondrio derecho', './imgs/634c4d255f2cf.jpg', 14),
+(40, 'Mariana Bianchi', 31, 34999223, 'Dolor en fosa iliaca derecha con vomitos ', './imgs/634c4d4be9893.jpg', 16),
 (41, 'Agustin Martinez', 25, 39882932, 'Migraña sin aura ', '', 14),
-(43, 'Francisco Sosa', 32, 34098838, 'Angor después de correr ', '', 16),
+(43, 'Francisco Sosa', 32, 34098838, 'Angor después de correr ', './imgs/634c4d9599040.jpg', 16),
 (45, 'Carlos Magno', 44, 23444122, 'Fiebre hace 2 dias ', '', 1),
 (62, 'Bautista Saenz', 25, 40939932, 'Fiebre y dificultad para respirar ', './imgs/634af7d3ca111.jpg', 2),
 (63, 'Florencia Fernandez', 42, 28484832, 'Fibroadenoma en mama derecha', './imgs/634af7e018761.jpg', 1);

@@ -31,9 +31,6 @@
 
     <div class="input-group mb-3">
     <span class="input-group-text">Estudios de imagenes</span>
-    {if isset($pacientes->imagen)}
-     
-    {/if}
     {if isset($pacientes[0]->imagen)}
       <img src="{$pacientes[0]->imagen}" class="img-fluid" alt="Responsive image"/>
     {else}

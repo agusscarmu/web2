@@ -94,7 +94,7 @@ switch($parse[0]){
     break;
 
     case 'administracion':
-    $pageController->getAdmin();
+    $adminController->getAdmin();
     break;
 
     case 'adminpacientes':
