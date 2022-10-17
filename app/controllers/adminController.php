@@ -81,7 +81,7 @@ class adminController{
     function getObras(){
         $this->helper->validate();
         $obras = $this->osmodel->getObrasocial();
-        $this->view->showObras($obras);
+        $this->view->showObrasAdmin($obras);
     }
 
     function addOs(){

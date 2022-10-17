@@ -15,6 +15,13 @@ class userView{
         $this->smarty->assign('count',(count($pacientes)));
         $this->smarty->display('listaPacientes.tpl');
     }
+
+    function showObrassociales($oSocial){
+        $this->smarty->assign('obras',$oSocial);
+        $this->smarty->assign('count',(count($oSocial)));
+        $this->smarty->display('obrasSociales.tpl');
+    }
+
     function showIngresar($error = null){
         $this->smarty->assign("error" ,$error);
         $this->smarty->display('formLogin.tpl');
@@ -59,7 +66,7 @@ class userView{
         $this->smarty->display('viewPaciente.tpl');
     }
 
-    function showObras($obras){
+    function showObrasAdmin($obras){
         $this->smarty->assign('obras',$obras);
         $this->smarty->assign('count',(count($obras)));
         $this->smarty->display('adminObrasocial.tpl');

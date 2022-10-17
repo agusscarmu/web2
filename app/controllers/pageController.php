@@ -24,6 +24,12 @@ class pageController{
 
     }
 
+    public function getObrassociales(){
+        $oSocial = $this->osmodel->getObrasocial();
+        $this->view->showObrassociales($oSocial);
+
+    }
+
     public function getIngreso(){
         $this->view->showIngresar();
     }

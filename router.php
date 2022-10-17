@@ -31,6 +31,10 @@ switch($parse[0]){
     $pageController->getIngreso();
     break;
 
+    case 'obrassociales':
+    $pageController->getObrassociales();
+    break;
+
     case 'logout':
     $loginController->logout();
     break;
