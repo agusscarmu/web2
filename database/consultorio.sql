@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-10-2022 a las 00:59:56
+-- Tiempo de generación: 17-10-2022 a las 21:45:31
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -88,14 +88,13 @@ CREATE TABLE `pacientes` (
 --
 
 INSERT INTO `pacientes` (`ID`, `nombre`, `edad`, `dni`, `motivo`, `imagen`, `ID_obrasocial`) VALUES
-(32, 'Katarina Gonzalez', 31, 39482488, 'Cefalea', '', 2),
-(39, 'Julian Gomez', 40, 29848732, 'Dolor en hipocondrio derecho', './imgs/634c4d255f2cf.jpg', 14),
-(40, 'Mariana Bianchi', 31, 34999223, 'Dolor en fosa iliaca derecha con vomitos ', './imgs/634c4d4be9893.jpg', 16),
-(41, 'Agustin Martinez', 25, 39882932, 'Migraña sin aura ', '', 14),
-(43, 'Francisco Sosa', 32, 34098838, 'Angor después de correr ', './imgs/634c4d9599040.jpg', 16),
-(45, 'Carlos Magno', 44, 23444122, 'Fiebre hace 2 dias ', '', 1),
-(62, 'Bautista Saenz', 25, 40939932, 'Fiebre y dificultad para respirar ', './imgs/634af7d3ca111.jpg', 2),
-(63, 'Florencia Fernandez', 42, 28484832, 'Fibroadenoma en mama derecha', './imgs/634af7e018761.jpg', 1);
+(39, 'Julian Gomez', 40, 29848732, 'Dolor en hipocondrio derecho', './imgs/634dae1d45c1e.jpg', 14),
+(43, 'Francisco Sosa', 32, 34098838, 'Angor después de correr ', './imgs/634dae07e2177.jpg', 16),
+(62, 'Bautista Saenz', 25, 40939932, 'Fiebre y dificultad para respirar ', './imgs/634dadfd190a3.jpg', 2),
+(63, 'Florencia Fernandez', 42, 28484832, 'Fibroadenoma en mama derecha', './imgs/634dadf09dcd9.jpg', 1),
+(71, 'Katarina Gomez', 34, 37848423, 'Cefalea ', NULL, 2),
+(72, 'Mariana Bianchi', 31, 39498020, 'Dolor en fosa iliaca derecha con vomitos', './imgs/634dafcdb4ebb.jpg', 1),
+(73, 'Raul Bonafide', 70, 13849231, 'Glucemia alta ', NULL, 13);
 
 --
 -- Índices para tablas volcadas
@@ -140,7 +139,7 @@ ALTER TABLE `obrasocial`
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- Restricciones para tablas volcadas
